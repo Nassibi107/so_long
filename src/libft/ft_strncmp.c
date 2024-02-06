@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:40:36 by ynassibi         ###   ########.fr       */
+/*   Created: 2023/11/02 11:26:13 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/02/06 15:44:02 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#include "libft.h"
 
-# include "../src/get_next_line/get_next_line.h"
-# include "../src/libft/libft.h"
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*x;
+	unsigned char	*y;
 
-char	*get_maps(char *av);
-int		is_not_nline(char *str);
-int		is_s_ofone(char **str);
-int		is_one(char *str);
-int		is_eq_lenght(char **str);
-int		check_pce(char **str);
-int		check_extion(char *str);
-
-#endif
+	x = (unsigned char *) s1;
+	y = (unsigned char *) s2;
+	i = 0;
+	while ((x[i] && y[i]) && n && (x[i] == y[i]))
+	{
+		i++;
+		n--;
+	}
+	if (n == 0)
+		return (0);
+	else
+	{
+		return (x[i] - y[i]);
+	}
+}

@@ -14,9 +14,10 @@ SRCS_GET = src/get_next_line/get_next_line.c  src/get_next_line/get_next_line_ut
 
 SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c src/libft/ft_putnbr_fd.c \
          src/libft/ft_split.c src/libft/ft_isdigit.c src/libft/ft_putstr_fd.c src/libft/ft_bzero.c src/libft/ft_calloc.c \
-			src/libft/ft_strjoin.c src/libft/ft_strlen.c  src/libft/ft_strnstr.c
+			src/libft/ft_strjoin.c src/libft/ft_strlen.c  src/libft/ft_strnstr.c  src/libft/ft_strncmp.c
 
-SRCS_T = tools/get_maps.c  tools/is_not_nline.c tools/is_one.c tools/is_s_ofone.c tools/is_eq_lenght.c
+SRCS_T = tools/get_maps.c  tools/is_not_nline.c tools/is_one.c tools/is_s_ofone.c tools/is_eq_lenght.c  \
+			tools/check_pce.c tools/check_extion.c
 
 SRC = so_long.c
 OBJ = so_long.o

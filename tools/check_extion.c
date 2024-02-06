@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   check_extion.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:40:36 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/02/06 15:34:03 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/02/06 15:40:24 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#include "tools.h"
 
-# include "../src/get_next_line/get_next_line.h"
-# include "../src/libft/libft.h"
+int	check_extion(char *str)
+{
+	char *tk = ft_strnstr(str, ".ber", ft_strlen(str));
 
-char	*get_maps(char *av);
-int		is_not_nline(char *str);
-int		is_s_ofone(char **str);
-int		is_one(char *str);
-int		is_eq_lenght(char **str);
-int		check_pce(char **str);
-int		check_extion(char *str);
-
-#endif
+	if (ft_strncmp(tk, ".ber", ft_strlen(tk)) == 0)
+		return (1);
+	return (0);
+}
