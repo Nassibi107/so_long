@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:40:36 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:40:28 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include "../src/get_next_line/get_next_line.h"
 # include "../src/libft/libft.h"
 
+typedef struct	info_game {
+	int	pl_py;
+	int	pl_px;
+	char	**map;
+	char	**cp_map;
+	int	l_mp;
+	int	w_mp;
+}	t_info_game;
+
 char	*get_maps(char *av);
 int		is_not_nline(char *str);
 int		is_s_ofone(char **str);
@@ -23,5 +32,9 @@ int		is_one(char *str);
 int		is_eq_lenght(char **str);
 int		check_pce(char **str);
 int		check_extion(char *str);
+void	framer_fill (t_info_game *s, int px, int py);
+int	*get_pl_postion(char **map);
+int	*get_demof_map(char **map);
+void	ft_switch(char **map);
 
 #endif

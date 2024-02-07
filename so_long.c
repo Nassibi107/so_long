@@ -6,13 +6,14 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:52:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:41:13 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:42:57 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "src/libft/libft.h"
 #include "tools/tools.h"
+#include <stdio.h>
 
 static void	err(void)
 {
@@ -43,7 +44,9 @@ int	main(int ac,char **av)
 		{
 			map = ft_split(str,'\n');
 			if (parsing(map))
-				printf("ok");
+			{
+				ft_switch(map);
+			}
 			else
 				err();
 		}
