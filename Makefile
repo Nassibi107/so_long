@@ -2,7 +2,7 @@ SRCS = so_long.c
 
 OBJS	= ${SRCS:.c=.o}
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -g
 
 
 NAME	= so_long.a
@@ -18,7 +18,7 @@ SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c
 
 SRCS_T = tools/get_maps.c  tools/is_not_nline.c tools/is_one.c tools/is_s_ofone.c tools/is_eq_lenght.c  \
 			tools/check_pce.c tools/check_extion.c  tools/framer_fill.c tools/get_pl_postion.c  \
-			tools/get_demof_map.c tools/ft_switch.c
+			tools/get_demof_map.c tools/ft_switch.c tools/is_vextions.c
 
 SRC = so_long.c
 OBJ = so_long.o
@@ -44,7 +44,7 @@ all: $(NAME) $(AOUT)
 	${CC} ${FLAGS} -c $< -o $@
 
 $(NAME):${OBJ} ${OBJS_GL} ${OBJS_L} ${OBJS_T}
-	ar rc $(NAME)  ${OBJS_L} $(OBJS) ${OBJS_T} ${OBJS_GL}
+	@ar rc $(NAME)  ${OBJS_L} $(OBJS) ${OBJS_T} ${OBJS_GL}
 	@ranlib $(NAME)
 
 $(AOUT): $(NAME) $(OBJ)

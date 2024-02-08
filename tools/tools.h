@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/07 15:40:28 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:40:33 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ typedef struct	info_game {
 	int	pl_py;
 	int	pl_px;
 	char	**map;
-	char	**cp_map;
 	int	l_mp;
 	int	w_mp;
 }	t_info_game;
@@ -36,5 +35,5 @@ void	framer_fill (t_info_game *s, int px, int py);
 int	*get_pl_postion(char **map);
 int	*get_demof_map(char **map);
 void	ft_switch(char **map);
-
+char	*is_vextions(char *str);
 #endif

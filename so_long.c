@@ -6,14 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:52:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/07 15:42:57 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:42:34 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "src/libft/libft.h"
 #include "tools/tools.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 static void	err(void)
 {
@@ -35,9 +34,7 @@ int	main(int ac,char **av)
 {
 	char	*str;
 	char	**map;
-
-
-	if (ac == 2 && check_extion(av[1]))
+	if (ac == 2 && ft_strnstr(is_vextions(av[1]),".ber",4))
 	{
 		str = get_maps(av[1]);
 		if (is_not_nline(str))
@@ -55,5 +52,4 @@ int	main(int ac,char **av)
 	}
 	else
 		err();
-
 }
