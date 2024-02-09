@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 10:16:18 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:30:38 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int		check_extion(char *str);
 void	framer_fill (t_info_game *s, int px, int py);
 int	*get_pl_postion(char **map);
 int	*get_demof_map(char **map);
-void	ft_switch(char **map);
+void	ft_switch(char **map, t_info_game *inf_game);
 char	*is_vextions(char *str);
 void	ft_create_gm(t_info_game *info_gm);
+void	ft_clean_str(char **str);
 #endif

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_vextions.c                                      :+:      :+:    :+:   */
+/*   ft_clean_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 15:34:12 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 13:01:01 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/02/09 11:46:00 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/02/09 12:01:53 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 
-char	*is_vextions(char *str)
+void	ft_clean_str(char **str)
 {
+	int	i;
 
-	while (*str)
-		str++;
-	str--;
-	while(*str)
+	i = 0;
+	while (str[i])
 	{
-		if (*str == '.')
-			return (str);
-		str--;
+		free(str[i]);
+		i++;
 	}
-	return (str);
+	free(str);
+	str = NULL;
 }
