@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:52:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/08 15:42:34 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:31:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include "tools/tools.h"
 #include <stdlib.h>
 
+void	wsakhe(void)
+{
+	system("leaks so_long");
+}
 static void	err(void)
 {
 	ft_putendl_fd("Error",2);
@@ -32,6 +36,7 @@ static int parsing (char **map)
 
 int	main(int ac,char **av)
 {
+	atexit("wsakhe");
 	char	*str;
 	char	**map;
 	if (ac == 2 && ft_strnstr(is_vextions(av[1]),".ber",4))

@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 10:44:10 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/08 18:18:48 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:11:03 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 void	framer_fill (t_info_game *s, int px, int py)
 {
 	if(px < 0 || py < 0
-		|| py > s->l_mp || px > s->w_mp
-		|| s->map[px][py] == '1'
-		|| s->map[px][py] == 'F')
+		|| py >= s->l_mp || px >= s->w_mp
+		|| s->cp_map[py][px] == '1'
+		|| s->cp_map[py][px] == '@')
 		return ;
-	s->map[px][py] = 'F';
+	s->cp_map[py][px] = '@';
 	framer_fill (s,px - 1, py);
 	framer_fill (s,px + 1, py);
 	framer_fill (s,px,py - 1);
