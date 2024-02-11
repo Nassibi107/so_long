@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 12:30:38 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:02:36 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../src/get_next_line/get_next_line.h"
 # include "../src/libft/libft.h"
+# include <mlx.h>
 
 typedef struct	info_game {
 	int	pl_py;

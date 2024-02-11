@@ -42,20 +42,26 @@ all: $(NAME) $(AOUT)
 
 
 %.o: %.c ${HEAD}
-	${CC} ${FLAGS} -c $< -o $@
+	@${CC} ${FLAGS} -c $< -o $@
+	@$(CC) ${FLAGS} -Imlx -c $< -o $@
+
+
+%.o: %.c
+
 
 $(NAME):${OBJ} ${OBJS_GL} ${OBJS_L} ${OBJS_T}
 	@ar rc $(NAME)  ${OBJS_L} $(OBJS) ${OBJS_T} ${OBJS_GL}
+	$(CC) $(NAME) -lmlx -framework OpenGL -framework AppKit -o $(AOUT)
+	@echo "$(GREEN)______________	  ___   _____________________"
+	@echo "$(GREEN)7     77     7	  7  7   7     77     77     7"
+	@echo "$(GREEN)|  ___!|  7  |	  |  |   |  7  ||  _  ||   __!"
+	@echo "$(GREEN)!__   7|  |  |	  |  !___|  |  ||  7  ||  !  7"
+	@echo "$(GREEN)7     ||  !  |____|     7|  !  ||  |  ||     |"
+	@echo "$(GREEN)!_____!!_____!____!_____!!_____!!__!__!!_____!"
+	@echo "$(GREEN) The Makefile of [SO_LONG] has been compiled!$(DEF_COLOR)"
+	@echo "$(YELLOW)\n !Use this command in the folder root: ./bin/so_long rscs/maps/valids/<map_name>.ber\n$(DEF_COLOR)"
 	@ranlib $(NAME)
 
-$(AOUT): $(NAME) $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) $(NAME) -o $@
-	@$(RM) $(OBJ)
-	@$(RM) $(NAME)
-	@echo "$(GREEN)------------------------------------------------------$(RESET)"
-	@echo "$(GREEN)		so_long is running "
-	@echo "$(GREEN)------------------------------------------------------$(RESET)"
-	@printf "$(OK) so_long is running.\n"
 
 
 clean:
