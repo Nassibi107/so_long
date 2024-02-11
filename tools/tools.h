@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/11 16:02:36 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/11 18:19:01 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ typedef struct	info_game {
 	char	**cp_map;
 	int	l_mp;
 	int	w_mp;
+	void	*int_p;
+	void	*win_p;
+	void	*img_p;
+	void	*wall;
+	void	*floor;
+	void	*player;
 }	t_info_game;
 
 char	*get_maps(char *av);
@@ -40,4 +46,5 @@ void	ft_switch(char **map, t_info_game *inf_game);
 char	*is_vextions(char *str);
 void	ft_create_gm(t_info_game *info_gm);
 void	ft_clean_str(char **str);
+void	ft_create(t_info_game *info_game);
 #endif

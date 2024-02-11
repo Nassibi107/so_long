@@ -19,7 +19,7 @@ SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c
 SRCS_T = tools/get_maps.c  tools/is_not_nline.c tools/is_one.c tools/is_s_ofone.c tools/is_eq_lenght.c  \
 			tools/check_pce.c tools/check_extion.c  tools/framer_fill.c tools/get_pl_postion.c  \
 			tools/get_demof_map.c tools/ft_switch.c tools/is_vextions.c tools/ft_create_gm.c \
-			tools/ft_clean_str.c
+			tools/ft_clean_str.c tools/ft_create.c
 
 SRC = so_long.c
 OBJ = so_long.o
@@ -59,7 +59,7 @@ $(NAME):${OBJ} ${OBJS_GL} ${OBJS_L} ${OBJS_T}
 	@echo "$(GREEN)7     ||  !  |____|     7|  !  ||  |  ||     |"
 	@echo "$(GREEN)!_____!!_____!____!_____!!_____!!__!__!!_____!"
 	@echo "$(GREEN) The Makefile of [SO_LONG] has been compiled!$(DEF_COLOR)"
-	@echo "$(YELLOW)\n !Use this command in the folder root: ./bin/so_long rscs/maps/valids/<map_name>.ber\n$(DEF_COLOR)"
+	@echo "$(BLUE)\n !Use this command in the folder root: ./bin/so_long rscs/maps/valids/<map_name>.ber\n$(DEF_COLOR)"
 	@ranlib $(NAME)
 
 
