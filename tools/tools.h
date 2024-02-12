@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/11 18:19:01 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/12 11:40:04 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct	info_game {
 	void	*wall;
 	void	*floor;
 	void	*player;
+	void	*ex;
+	void	*coins;
 }	t_info_game;
 
 char	*get_maps(char *av);

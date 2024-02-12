@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:13:37 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/11 18:22:09 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/12 11:41:22 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static int check_pce_framer(char **str)
 
 void	ft_create_gm(t_info_game *info_gm)
 {
-	// int i = 0;
 	void	*int_pt;
 	void	*win_pt;
 
@@ -45,10 +44,11 @@ void	ft_create_gm(t_info_game *info_gm)
 	{
 		int_pt = mlx_init();
 		win_pt = mlx_new_window(int_pt,info_gm->w_mp * 50 ,info_gm->l_mp * 50 , "so_long");
+		info_gm->int_p = int_pt;
+		info_gm->win_p = win_pt;
 		ft_create(info_gm);
-		mlx_loop(int_pt);
 	}
-	else
+	else	
 	{
 		ft_clean_str(info_gm->cp_map);
 		ft_clean_str(info_gm->map);
