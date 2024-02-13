@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:52:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 16:43:19 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:12:30 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	wsakhe(void)
-{
-	system("leaks so_long");
-}
+// void	wsakhe(void)
+// {
+// 	system("leaks so_long");
+// }
 static void	err(void)
 {
 	ft_putendl_fd("Error",2);
@@ -38,9 +38,9 @@ static int parsing (char **map)
 
 int	main(int ac,char **av)
 {
-	atexit(wsakhe);
+	// atexit(wsakhe);
 	char	*str = NULL;
-	
+
 	char	**map;
 	t_info_game info_game;
 
@@ -53,8 +53,8 @@ int	main(int ac,char **av)
 			if (parsing(map))
 			{
 				ft_switch(map, &info_game);
-				free(str);
-				ft_clean_str(map);
+				// free(str);
+				// ft_clean_str(map);
 			}
 			else
 			{

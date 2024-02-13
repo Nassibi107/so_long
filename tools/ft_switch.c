@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:12:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 12:42:03 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:26:05 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static char	*ft_strfill(int wt,char *map)
 	int	i;
 	char *str = malloc(wt + 1);
 	i = 0;
-	while (map[i])
+	while (i < wt)
 	{
 		str[i] = map[i];
 		i++;
 	}
-	str[i] = 0;
+	str[i] = '\0';
 	return (str);
 }
 
@@ -32,12 +32,12 @@ static void ft_strrcpy(char **str, char **map, int len, int wt)
 {
 	int	y;
 	y = 0;
-	while(y < len + 1)
+	while(y < len)
 	{
 		str[y] = ft_strfill(wt,map[y]);
 		y++;
 	}
-	str[y] = 0;
+	str[y] = NULL;
 }
 void	ft_switch(char **map, t_info_game *inf_game)
 {
@@ -54,27 +54,15 @@ void	ft_switch(char **map, t_info_game *inf_game)
 	inf_game->w_mp = arr_dm[1];
 	free(arr_p);
 	free(arr_dm);
-	len = inf_game->l_mp;
-	wt = inf_game->w_mp;
-	inf_game->map = NULL;
-	inf_game->map =(char **)malloc(sizeof(char *) * (len + 1));
+	len = inf_game->l_mp ;
+	wt = inf_game->w_mp ;
+	inf_game->map = malloc(sizeof(char *) * (len + 1));
 	if (!inf_game->map)
 		return ;
 	ft_strrcpy(inf_game->map,map,len, wt);
-	inf_game->cp_map =(char **)malloc(sizeof(char *) * (len + 1));
-	if (!inf_game->map)
+	inf_game->cp_map = malloc(sizeof(char *) * (len + 1));
+	if (!inf_game->cp_map)
 		return ;
 	ft_strrcpy(inf_game->cp_map,map,len, wt);
 	ft_create_gm(inf_game);
- }
- 	// int i = 0;
-
-	// printf("------------map------------\n");
-	// while (i < len + 1){
-	// 	printf("%s\n", inf_game->map[i++]);
-	// }
-	// i = 0;
-	// printf("------------cp_map------------\n");
-	// while (i < len + 2){
-	// 	printf("%s\n", inf_game->cp_map[i++]);
-	// }
+}

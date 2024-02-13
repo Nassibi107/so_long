@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:45:14 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/07 15:00:02 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:26:19 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ int	*get_demof_map(char **map)
 	{
 		j = 0;
 		while(map[i][j])
+		{
 			j++;
+		}
 		i++;
 	}
-	arr_dmp[0] = i - 1;
-	arr_dmp[1] = j;
+	arr_dmp[0] = i ;
+	arr_dmp[1] = j ;
 	return (arr_dmp);
 }
