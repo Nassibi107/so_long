@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:57:08 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 14:37:24 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:59:47 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,18 @@ void	ft_down(t_info_game *gm, int *i)
 	else if (gm->map[gm->pl_py + 1][gm->pl_px] == 'C')
 	{
 		gm->map[gm->pl_py + 1][gm->pl_px] = '0';
-		ft_swap(&gm->map[gm->pl_py + 1][gm->pl_px],
-			&gm->map[gm->pl_py][gm->pl_px]);
+		ft_swap(&gm->map[gm->pl_py][gm->pl_px],
+			&gm->map[gm->pl_py + 1][gm->pl_px]);
 		(*i)++;
 		ft_mving(125, gm);
 	}
-	else if (gm->map[gm->pl_py + 1][gm->pl_px] == 'E'
-		&& ft_find_col(gm->map))
+	else if (gm->map[gm->pl_py + 1][gm->pl_px] == 'E')
 	{
-		if (gm->map[gm->pl_px][gm->pl_py + 1] == 'E')
-			printf("OK");
+		puts("down");
+		show_me(gm->map);
+		if (ft_col_we(gm->map))
+			mlx_destroy_window(gm->int_p, gm->win_p);
 		(*i)++;
 	}
 }
+

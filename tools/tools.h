@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 12:30:27 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:56:13 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../src/get_next_line/get_next_line.h"
 # include "../src/libft/libft.h"
 # include <mlx.h>
+# include <unistd.h>
 
 
 typedef struct	info_game {
@@ -34,6 +35,12 @@ typedef struct	info_game {
 	void	*ex;
 	void	*coins;
 }	t_info_game;
+
+#define RED = \033[1;31m
+# define GREEN = \033[1;32m
+#define YELLOW = \033[1;33m
+# define BLUE = \033[1;34m
+# define RESET = \033[0m
 
 void	ft_hooks(t_info_game *gm);
 char	*get_maps(char *av);
@@ -59,4 +66,6 @@ void	ft_left(t_info_game *gm, int *i);
 void	ft_right(t_info_game *gm, int *i);
 void	ft_mving(int flag,t_info_game *s);
 void	ft_init(t_info_game *stc);
+int	ft_col_we(char **map);
+void	show_me(char **map);
 #endif
