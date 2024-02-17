@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:41:59 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 16:58:56 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:43:22 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ void	ft_up(t_info_game *gm, int *i)
 	}
 	else if (gm->map[gm->pl_py - 1][gm->pl_px] == 'E')
 	{
-		puts("up");
-		show_me(gm->map);
-		if (ft_col_we(gm->map))
+		if(ft_col_we(gm->map))
+		{
 			mlx_destroy_window(gm->int_p, gm->win_p);
+			you_win(gm);
+		}
 		(*i)++;
 	}
 }

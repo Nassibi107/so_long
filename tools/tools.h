@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 16:56:13 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/17 18:01:33 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <mlx.h>
 # include <unistd.h>
 
-
+#define macro(mlx_window) NULL
 typedef struct	info_game {
 	int	pl_py;
 	int	pl_px;
@@ -68,4 +68,5 @@ void	ft_mving(int flag,t_info_game *s);
 void	ft_init(t_info_game *stc);
 int	ft_col_we(char **map);
 void	show_me(char **map);
+void	you_win(t_info_game *p);
 #endif
