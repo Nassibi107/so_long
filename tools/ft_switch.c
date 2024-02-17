@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:12:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/13 16:26:05 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/17 12:33:30 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_switch(char **map, t_info_game *inf_game)
 	int			wt;
 	int		*arr_p;
 	int		*arr_dm;
-
+	ft_init(inf_game);
 	arr_p = get_pl_postion(map);
 	arr_dm = get_demof_map(map);
 	inf_game->pl_px = arr_p[1];

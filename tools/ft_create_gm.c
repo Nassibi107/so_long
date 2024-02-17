@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:13:37 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/13 16:25:33 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/14 14:43:20 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_create_gm(t_info_game *info_gm)
 	else
 	{
 		puts("ok");
-		//ft_clean_str(info_gm->cp_map);
-		//ft_clean_str(info_gm->map);
+		ft_clean_str(info_gm->cp_map);
+		ft_clean_str(info_gm->map);
 	}
 }

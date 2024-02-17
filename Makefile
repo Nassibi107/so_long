@@ -19,7 +19,8 @@ SRCS_L = src/libft/ft_atoi.c src/libft/ft_putchar_fd.c src/libft/ft_putendl_fd.c
 SRCS_T = tools/get_maps.c  tools/is_not_nline.c tools/is_one.c tools/is_s_ofone.c tools/is_eq_lenght.c  \
 			tools/check_pce.c tools/check_extion.c  tools/framer_fill.c tools/get_pl_postion.c  \
 			tools/get_demof_map.c tools/ft_switch.c tools/is_vextions.c tools/ft_create_gm.c \
-			tools/ft_clean_str.c tools/ft_create.c
+			tools/ft_clean_str.c tools/ft_create.c tools/ft_hooks.c tools/update_ppl.c tools/ft_down.c \
+			tools/ft_swap.c tools/ft_up.c tools/ft_left.c tools/ft_right.c tools/ft_mving.c tools/ft_init.c
 
 SRC = so_long.c
 OBJ = so_long.o

@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 17:33:01 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/13 16:15:07 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/14 16:33:10 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,28 @@ static void  ft_getfloor(t_info_game *info_game)
 	}
 }
 
-void	ft_create(t_info_game *info_game)
+static void init_stc(t_info_game *info_game)
 {
-	int	wl_1 = 10 ;
-	int	wl_2 = 10;
-	int	i;
-	int	j;
+	int	wl_1;
+	int	wl_2;
 
-	i = 0;
-	j = 0;
+	wl_1 = 50;
+	wl_2 = 50;
 	info_game->floor = mlx_xpm_file_to_image(info_game->int_p,"env/floor.xpm",&wl_1, &wl_2);
 	info_game->wall = mlx_xpm_file_to_image(info_game->int_p,"env/Tree.xpm",&wl_1, &wl_2);
 	info_game->player = mlx_xpm_file_to_image(info_game->int_p,"env/kratos.xpm",&wl_1, &wl_2);
 	info_game->coins = mlx_xpm_file_to_image(info_game->int_p,"env/col.xpm",&wl_1, &wl_2);
 	info_game->ex = mlx_xpm_file_to_image(info_game->int_p,"env/exit.xpm",&wl_1, &wl_2);
+}
 
+void	ft_create(t_info_game *info_game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	init_stc(info_game);
 	ft_getfloor(info_game);
 	while (info_game->map[i])
 	{
@@ -73,6 +80,6 @@ void	ft_create(t_info_game *info_game)
 		}
 		i++;
 	}
+	ft_hooks(info_game);
 	mlx_loop(info_game->int_p);
-
 }

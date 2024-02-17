@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/12 11:40:04 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/17 12:30:27 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../src/get_next_line/get_next_line.h"
 # include "../src/libft/libft.h"
 # include <mlx.h>
+
 
 typedef struct	info_game {
 	int	pl_py;
@@ -34,6 +35,7 @@ typedef struct	info_game {
 	void	*coins;
 }	t_info_game;
 
+void	ft_hooks(t_info_game *gm);
 char	*get_maps(char *av);
 int		is_not_nline(char *str);
 int		is_s_ofone(char **str);
@@ -49,4 +51,12 @@ char	*is_vextions(char *str);
 void	ft_create_gm(t_info_game *info_gm);
 void	ft_clean_str(char **str);
 void	ft_create(t_info_game *info_game);
+void	ft_swap(char *a, char *b);
+void	ft_down(t_info_game *gm, int *i);
+void	update_ppl(t_info_game *gm);
+void	ft_up(t_info_game *gm, int *i);
+void	ft_left(t_info_game *gm, int *i);
+void	ft_right(t_info_game *gm, int *i);
+void	ft_mving(int flag,t_info_game *s);
+void	ft_init(t_info_game *stc);
 #endif
