@@ -6,18 +6,18 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:12:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 12:33:30 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 11:46:15 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-static char	*ft_strfill(int wt,char *map)
+static char	*ft_strfill(int wt, char *map)
 {
-	int	i;
-	char *str = malloc(wt + 1);
+	char	*str;
+	int		i;
+
+	str = malloc(wt + 1);
 	i = 0;
 	while (i < wt)
 	{
@@ -28,23 +28,26 @@ static char	*ft_strfill(int wt,char *map)
 	return (str);
 }
 
-static void ft_strrcpy(char **str, char **map, int len, int wt)
+static void	ft_strrcpy(char **str, char **map, int len, int wt)
 {
 	int	y;
+
 	y = 0;
-	while(y < len)
+	while (y < len)
 	{
-		str[y] = ft_strfill(wt,map[y]);
+		str[y] = ft_strfill(wt, map[y]);
 		y++;
 	}
 	str[y] = NULL;
 }
+
 void	ft_switch(char **map, t_info_game *inf_game)
 {
 	int			len;
 	int			wt;
-	int		*arr_p;
-	int		*arr_dm;
+	int			*arr_p;
+	int			*arr_dm;
+
 	ft_init(inf_game);
 	arr_p = get_pl_postion(map);
 	arr_dm = get_demof_map(map);
@@ -59,10 +62,10 @@ void	ft_switch(char **map, t_info_game *inf_game)
 	inf_game->map = malloc(sizeof(char *) * (len + 1));
 	if (!inf_game->map)
 		return ;
-	ft_strrcpy(inf_game->map,map,len, wt);
+	ft_strrcpy(inf_game->map, map, len, wt);
 	inf_game->cp_map = malloc(sizeof(char *) * (len + 1));
 	if (!inf_game->cp_map)
 		return ;
-	ft_strrcpy(inf_game->cp_map,map,len, wt);
+	ft_strrcpy(inf_game->cp_map, map, len, wt);
 	ft_create_gm(inf_game);
 }

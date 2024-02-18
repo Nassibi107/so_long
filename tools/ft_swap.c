@@ -6,13 +6,13 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 12:37:49 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/15 12:39:29 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 11:39:11 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 
-void  ft_swap(char *a, char *b)
+void	ft_swap(char *a, char *b)
 {
 	char	tmp;
 

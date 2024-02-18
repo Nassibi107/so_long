@@ -61,15 +61,15 @@ $(NAME):${OBJ} ${OBJS_GL} ${OBJS_L} ${OBJS_T}
 	@echo "$(GREEN)7     ||  !  |____|     7|  !  ||  |  ||     |"
 	@echo "$(GREEN)!_____!!_____!____!_____!!_____!!__!__!!_____!"
 	@echo "$(GREEN) The Makefile of [SO_LONG] has been compiled!$(DEF_COLOR)"
-	@echo "$(BLUE)\n !Use this command in the folder root: ./bin/so_long rscs/maps/valids/<map_name>.ber\n$(DEF_COLOR)"
-	@ranlib $(NAME)
-
+	@echo "$(BLUE)\n !Use this command in the folder root: ./so_long maps/valids/<map_name>.ber\n$(DEF_COLOR)"
+	@rm  $(NAME)
+	@rm  $(OBJ)
 
 
 clean:
-	rm -rf $(OBJS) ${OBJS_GL} ${OBJS_L} ${OBJS_T}
+	rm -rf $(OBJS) ${OBJS_GL} ${OBJS_L} ${OBJS_T} ${AOUT}
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) ${AOUT}
 
 re: fclean all

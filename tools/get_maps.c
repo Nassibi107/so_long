@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:52:07 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 16:30:19 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 12:29:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static int	par(char *str)
 
 char	*get_maps(char *av)
 {
-	char		*str;
-	char		*s;
-	int			fm;
+	char			*str;
+	char			*s;
+	int				fm;
 
 	str = malloc(1);
 	str[0] = '\0';
@@ -41,10 +41,7 @@ char	*get_maps(char *av)
 	{
 		s = get_next_line(fm);
 		if (!s)
-		{
-			free(s);
 			break ;
-		}
 		str = ft_strjoin(str, s);
 		free(s);
 	}

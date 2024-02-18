@@ -6,50 +6,52 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:16:47 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/09 11:16:02 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 10:52:53 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "tools.h"
 
-static void count_player(char *str,int *p)
+static void	count_player(char *str, int *p)
 {
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == 'P')
 			*p += 1;
 		i++;
 	}
 }
-static void count_colle(char *str,int *c)
+
+static void	count_colle(char *str, int *c)
 {
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == 'C')
 			*c += 1;
 		i++;
 	}
 }
-static void count_exit(char *str,int *e)
+
+static void	count_exit(char *str, int *e)
 {
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == 'E')
 			*e += 1;
 		i++;
 	}
 }
-static int check_pieces_map(char	**str)
+
+static int	check_pieces_map(char	**str)
 {
 	int	i;
 	int	j;
@@ -69,7 +71,7 @@ static int check_pieces_map(char	**str)
 		}
 		i++;
 	}
-		return (1);
+	return (1);
 }
 
 int	check_pce(char **str)

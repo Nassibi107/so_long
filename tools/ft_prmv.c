@@ -6,21 +6,20 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:34:02 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 16:43:07 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 11:38:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 
-
-void	ft_prmv(int	f)
+void	ft_prmv(int f)
 {
-	if ( f == 125)
+	if (f == 125)
 		write(1, "\033[1;31m down", 3);
-	else if ( f == 126)
-		write(1,"\033[1;33m up", 3);
-	else if ( f == 123)
+	else if (f == 126)
+		write(1, "\033[1;33m up", 3);
+	else if (f == 123)
 		write(1, "\033[1;34m  right", 3);
-	else if ( f == 124)
+	else if (f == 124)
 		write(1, "\033[1;31m left", 3);
 }

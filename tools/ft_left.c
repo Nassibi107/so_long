@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:53:19 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 17:42:44 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 11:27:10 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_left(t_info_game *gm, int *i)
 		(*i)++;
 		ft_mving(123, gm);
 	}
-
 	else if (gm->map[gm->pl_py][gm->pl_px - 1] == 'C')
 	{
 		gm->map[gm->pl_py][gm->pl_px - 1] = '0';

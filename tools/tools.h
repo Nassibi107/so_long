@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:22:57 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/17 18:01:33 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 12:01:49 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <mlx.h>
 # include <unistd.h>
 
-#define macro(mlx_window) NULL
 typedef struct	info_game {
 	int	pl_py;
 	int	pl_px;
@@ -36,20 +35,15 @@ typedef struct	info_game {
 	void	*coins;
 }	t_info_game;
 
-#define RED = \033[1;31m
-# define GREEN = \033[1;32m
-#define YELLOW = \033[1;33m
-# define BLUE = \033[1;34m
-# define RESET = \033[0m
 
 void	ft_hooks(t_info_game *gm);
 char	*get_maps(char *av);
-int		is_not_nline(char *str);
-int		is_s_ofone(char **str);
-int		is_one(char *str);
-int		is_eq_lenght(char **str);
-int		check_pce(char **str);
-int		check_extion(char *str);
+int	is_not_nline(char *str);
+int	is_s_ofone(char **str);
+int	is_one(char *str);
+int	is_eq_lenght(char **str);
+int	check_pce(char **str);
+int	check_extion(char *str);
 void	framer_fill (t_info_game *s, int px, int py);
 int	*get_pl_postion(char **map);
 int	*get_demof_map(char **map);
