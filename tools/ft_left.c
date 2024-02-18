@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:53:19 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 11:27:10 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/18 18:16:55 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_left(t_info_game *gm, int *i)
 	{
 		ft_swap(&gm->map[gm->pl_py][gm->pl_px - 1],
 			&gm->map[gm->pl_py][gm->pl_px]);
-		(*i)++;
+		ft_putmv(i, 123);
 		ft_mving(123, gm);
 	}
 	else if (gm->map[gm->pl_py][gm->pl_px - 1] == 'C')
@@ -27,7 +27,7 @@ void	ft_left(t_info_game *gm, int *i)
 		gm->map[gm->pl_py][gm->pl_px - 1] = '0';
 		ft_swap(&gm->map[gm->pl_py][gm->pl_px],
 			&gm->map[gm->pl_py][gm->pl_px - 1]);
-		(*i)++;
+		ft_putmv(i, 123);
 		ft_mving(123, gm);
 	}
 	else if (gm->map[gm->pl_py][gm->pl_px - 1] == 'E')
@@ -37,6 +37,6 @@ void	ft_left(t_info_game *gm, int *i)
 			mlx_destroy_window(gm->int_p, gm->win_p);
 			you_win(gm);
 		}
-		(*i)++;
+		ft_putmv(i, 123);
 	}
 }
