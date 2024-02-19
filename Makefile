@@ -53,7 +53,7 @@ all: $(NAME) $(AOUT)
 
 $(NAME):${OBJ} ${OBJS_GL} ${OBJS_L} ${OBJS_T}
 	@ar rc $(NAME)  ${OBJS_L} $(OBJS) ${OBJS_T} ${OBJS_GL}
-	$(CC) $(NAME) -lmlx -framework OpenGL -framework AppKit -o $(AOUT)
+	@$(CC) $(NAME) -lmlx -framework OpenGL -framework AppKit -o $(AOUT)
 	@echo "$(GREEN)______________	  ___   _____________________"
 	@echo "$(GREEN)7     77     7	  7  7   7     77     77     7"
 	@echo "$(GREEN)|  ___!|  7  |	  |  |   |  7  ||  _  ||   __!"
