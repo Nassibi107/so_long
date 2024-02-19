@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_one.c                                           :+:      :+:    :+:   */
+/*   sepone.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 16:32:41 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 13:01:01 by ynassibi         ###   ########.fr       */
+/*   Created: 2024/02/19 11:23:32 by ynassibi          #+#    #+#             */
+/*   Updated: 2024/02/19 12:27:28 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 
-int	is_one(char *str)
+int	sepone(char **map)
 {
-	int	i;
+	int	y;
+	int	x;
 
-	i = 0;
-	while (str[i])
+	y = 0;
+	while (map[y])
+		y++;
+	y--;
+	x = 0;
+	while (map[y][x])
 	{
-		if (str[i] != '1')
+		if (map[y][x] != '1')
 			return (0);
-		i++;
+		x++;
 	}
 	return (1);
 }

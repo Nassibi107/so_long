@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 17:03:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 18:14:29 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:32:14 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void		ft_right(t_info_game *gm, int *i);
 void		ft_mving(int flag, t_info_game *s);
 void		ft_init(t_info_game *stc);
 int			ft_col_we(char **map);
+int			sepone(char **map);
 void		show_me(char **map);
 void		you_win(t_info_game *p);
-void	ft_putmv(int *n, int f);
+void		ft_putmv(int *n, int f);
 #endif

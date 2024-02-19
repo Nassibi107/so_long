@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:16:47 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 10:52:53 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 10:46:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,14 @@ static int	check_pieces_map(char	**str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] == '0' || str[i][j] == '1'
-				|| str[i][j] == 'P' || str[i][j] == 'E'
-				|| str[i][j] == 'C')
-				j++;
-			else
+			if (str[i][j] == '\n')
 				return (0);
+			if (str[i][j] != '0' && str[i][j] != '1'
+				&& str[i][j] != 'P' && str[i][j] != 'E'
+				&& str[i][j] != 'C')
+				return (0);
+			else
+				j++;
 		}
 		i++;
 	}

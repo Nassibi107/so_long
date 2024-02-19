@@ -6,15 +6,16 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:59:53 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 18:28:21 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:27:06 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
+#include <stdlib.h>
 
 int	key_hook(int k, void *prg)
 {
-	t_info_game	*sl;
+	t_info_game			*sl;
 	static int			i;
 
 	sl = (t_info_game *) prg;
@@ -27,7 +28,12 @@ int	key_hook(int k, void *prg)
 	else if (k == 124)
 		ft_right(sl, &i);
 	else if (k == 53)
-		puts(">> destroy");
+	{
+		mlx_destroy_window(sl->int_p, sl->win_p);
+		ft_clean_str(sl->cp_map);
+		ft_clean_str(sl->map);
+		exit(1);
+	}
 	return (0);
 }
 

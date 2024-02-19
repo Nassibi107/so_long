@@ -6,11 +6,17 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:13:37 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 11:20:13 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 09:52:35 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
+
+static void	errr(void)
+{
+	ft_putendl_fd("\033[1;31m Map not playable x_X! ", 2);
+	exit(1);
+}
 
 static int	check_pce_framer(char **str)
 {
@@ -52,5 +58,6 @@ void	ft_create_gm(t_info_game *info_gm)
 	{
 		ft_clean_str(info_gm->cp_map);
 		ft_clean_str(info_gm->map);
+		errr();
 	}
 }

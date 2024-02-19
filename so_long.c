@@ -6,11 +6,12 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:52:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 17:16:21 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:51:51 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "tools/tools.h"
 
 static void	err(void)
 {
@@ -22,7 +23,8 @@ static int	parsing(char **map)
 {
 	if (is_one(map[0])
 		&& is_s_ofone(map)
-		&& is_eq_lenght(map))
+		&& is_eq_lenght(map)
+		&& sepone(map))
 	{
 		if (check_pce(map))
 			return (1);
@@ -43,7 +45,7 @@ int	main(int ac, char **av)
 		{
 			map = ft_split(str, '\n');
 			free(str);
-			if (parsing(map))
+			if (parsing(map) == 1)
 				ft_switch(map, &info_game);
 			else
 				err();
