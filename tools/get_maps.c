@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:52:07 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 12:50:58 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:16:30 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*get_maps(char *av)
 	char			*s;
 	int				fm;
 
+	s = NULL;
 	str = malloc(1);
 	str[0] = '\0';
 	if (!str)
