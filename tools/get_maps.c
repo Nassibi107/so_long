@@ -6,11 +6,12 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:52:07 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 13:16:30 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:56:35 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
+#include <stdlib.h>
 
 static int	par(char *str)
 {
@@ -28,7 +29,11 @@ static char	*get_string_map(char *str, char *s, int fm)
 		if (!s)
 			break ;
 		if (s[0] == '\n' && s[1] == '\0')
+		{
+			free(str);
+			free(s);
 			return (0x0);
+		}
 		str = ft_strjoin(str, s);
 		free(s);
 	}

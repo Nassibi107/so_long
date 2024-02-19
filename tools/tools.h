@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 17:03:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 12:32:14 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 17:25:46 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			is_not_nline(char *str);
 int			is_s_ofone(char **str);
 int			is_one(char *str);
 int			is_eq_lenght(char **str);
-int			check_pce(char **str);
+int			check_pce(char **str, int *f);
 int			check_extion(char *str);
 void		framer_fill(t_info_game *s, int px, int py);
 int			*get_pl_postion(char **map);
@@ -65,4 +65,5 @@ int			sepone(char **map);
 void		show_me(char **map);
 void		you_win(t_info_game *p);
 void		ft_putmv(int *n, int f);
+void		error_pce(int p, int c, int e, int f);
 #endif

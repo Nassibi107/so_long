@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:16:47 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 10:46:06 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 17:31:09 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	count_exit(char *str, int *e)
 	}
 }
 
-static int	check_pieces_map(char	**str)
+static int	check_pieces_map(char	**str, int *f)
 {
 	int	i;
 	int	j;
@@ -67,7 +67,7 @@ static int	check_pieces_map(char	**str)
 			if (str[i][j] != '0' && str[i][j] != '1'
 				&& str[i][j] != 'P' && str[i][j] != 'E'
 				&& str[i][j] != 'C')
-				return (0);
+				return (error_pce(0, 0, 0, 0), f = 0, 0);
 			else
 				j++;
 		}
@@ -76,7 +76,7 @@ static int	check_pieces_map(char	**str)
 	return (1);
 }
 
-int	check_pce(char **str)
+int	check_pce(char **str, int *f)
 {
 	int	i;
 	int	p;
@@ -87,17 +87,16 @@ int	check_pce(char **str)
 	e = 0;
 	c = 0;
 	i = 0;
-	if (check_pieces_map(str))
+	if (!check_pieces_map(str, f))
+		return (f = 0, 0);
+	while (str[i])
 	{
-		while (str[i])
-		{
-			count_player(str[i], &p);
-			count_exit(str[i], &e);
-			count_colle(str[i], &c);
-			i++;
-		}
-		if (p == 1 && e == 1 && c >= 1)
-			return (1);
+		count_player(str[i], &p);
+		count_exit(str[i], &e);
+		count_colle(str[i], &c);
+		i++;
 	}
-	return (0);
+	if (p == 1 && e == 1 && c >= 1)
+		return (1);
+	return (error_pce(p, c, e, 1), f = 0, 0);
 }
