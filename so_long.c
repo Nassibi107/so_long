@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:52:36 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 17:38:19 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:14:26 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ static void	checker(char *str, char **map, int *f)
 		err("\033[1;31m map must be not follow with \
 	 new line or NULL (•)\033[0m", f);
 }
-
+static void lk (void)
+{
+	system("leaks so_long");
+}
 int	main(int ac, char **av)
 {
+	atexit(lk);
 	char		*str;
 	char		**map;
 	int			f;
