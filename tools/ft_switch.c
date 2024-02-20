@@ -6,40 +6,11 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:12:00 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/18 11:46:15 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:12:41 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
-
-static char	*ft_strfill(int wt, char *map)
-{
-	char	*str;
-	int		i;
-
-	str = malloc(wt + 1);
-	i = 0;
-	while (i < wt)
-	{
-		str[i] = map[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-static void	ft_strrcpy(char **str, char **map, int len, int wt)
-{
-	int	y;
-
-	y = 0;
-	while (y < len)
-	{
-		str[y] = ft_strfill(wt, map[y]);
-		y++;
-	}
-	str[y] = NULL;
-}
 
 void	ft_switch(char **map, t_info_game *inf_game)
 {
@@ -67,5 +38,5 @@ void	ft_switch(char **map, t_info_game *inf_game)
 	if (!inf_game->cp_map)
 		return ;
 	ft_strrcpy(inf_game->cp_map, map, len, wt);
-	ft_create_gm(inf_game);
+	ft_create_gm(inf_game, map);
 }
