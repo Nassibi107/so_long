@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:52:07 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/19 15:56:35 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/20 18:55:09 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*get_maps(char *av)
 	char			*s;
 	int				fm;
 
+	fm = -1;
 	s = NULL;
 	str = malloc(1);
 	str[0] = '\0';
@@ -56,7 +57,8 @@ char	*get_maps(char *av)
 	else
 	{
 		free(str);
-		return (0x0);
+		ft_putendl_fd("\033[1;31m file not found ! \033[0m", 2);
+		exit (1);
 	}
 	return (get_string_map(str, s, fm));
 }

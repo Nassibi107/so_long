@@ -6,7 +6,7 @@
 /*   By: ynassibi <ynassibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:13:37 by ynassibi          #+#    #+#             */
-/*   Updated: 2024/02/20 17:18:21 by ynassibi         ###   ########.fr       */
+/*   Updated: 2024/02/20 18:55:54 by ynassibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_gogm(t_info_game *info_gm, char **map)
 	{
 		int_pt = mlx_init();
 		win_pt = mlx_new_window(int_pt, (info_gm->w_mp) * 50,
-			(info_gm->l_mp) * 50, "so_long");
+				(info_gm->l_mp) * 50, "so_long");
 		info_gm->int_p = int_pt;
 		info_gm->win_p = win_pt;
 		ft_create(info_gm);
@@ -79,7 +79,7 @@ static int	check_pce_framer_ex(char **str)
 		while (str[i][j])
 		{
 			if (str[i][j] != '1' && str[i][j] != 'E'
-				&& str[i][j] != 'X')
+				&& str[i][j] != 'X' && str[i][j] != '0')
 				return (0);
 			j++;
 		}
